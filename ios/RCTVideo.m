@@ -100,6 +100,9 @@ static NSString *const timedMetadata = @"timedMetadata";
     playerLayer.view.frame = self.bounds;
     playerLayer.player = player;
     playerLayer.view.frame = self.bounds;
+  
+    //ensure the full screen ends to avoid crash when trying to close on end from react native
+    playerLayer.exitsFullScreenWhenPlaybackEnds = YES;
     return playerLayer;
 }
 
